@@ -5,13 +5,16 @@ import random
 def flip_coin(bet, result):
     # Heads = 0
     # Tails = 1
+    print('''##########
+FLIP COIN 
+##########''')
 
     # Verify conditions to bet
-    if bet > money:
-        print("You don't have all that money to bet.")
+    if bet > money or bet < 0:
+        print("You don't have all that money to bet.\n")
         return 0
     if (result.lower() != "heads") and (result.lower() != "tails"):
-        print("Invalid input result.")
+        print("Invalid input result.\n")
         return 0
 
     print("You pick: " + result)
@@ -24,27 +27,31 @@ def flip_coin(bet, result):
 
     if event == 0:
         if result.lower() == "heads":
-            print("Congrats!!")
+            print("Congrats you win!!\n")
             return bet
         else:
-            print("Better luck next time. :(")
+            print("Better luck next time. :(\n")
             return -bet
     else:
         if result.lower() == "tails":
-            print("Congrats!!")
+            print("Congrats you win!!\n")
             return bet
         else:
-            print("Better luck next time. :(")
+            print("Better luck next time. :(\n")
             return -bet
 
 
 def cho_han(bet, result):
+    print('''##########
+CHO    HAN 
+##########''')
+
     # Verify conditions to bet
-    if bet > money:
-        print("You don't have all that money to bet.")
+    if bet > money or bet < 0:
+        print("You don't have all that money to bet.\n")
         return 0
     if (result.lower() != "odd") and (result.lower() != "even"):
-        print("Invalid input result.")
+        print("Invalid input result.\n")
         return 0
 
     print("You picked a result of sum the dices: " + result)
@@ -56,24 +63,28 @@ def cho_han(bet, result):
 
     if (event % 2) == 0:
         if result.lower() == "even":
-            print("Congrats!!")
+            print("Congrats you win!!\n")
             return bet
         else:
-            print("Better luck next time. :(")
+            print("Better luck next time. :(\n")
             return -bet
     else:
         if result.lower() == "odd":
-            print("Congrats!!")
+            print("Congrats you win!!\n")
             return bet
         else:
-            print("Better luck next time. :(")
+            print("Better luck next time. :(\n")
             return -bet
 
 
 def pick_card(bet):
+    print('''##########
+PICK  CARD 
+##########''')
+
     # Verify conditions to bet
     if bet > money:
-        print("You don't have all that money to bet.")
+        print("You don't have all that money to bet.\n")
         return 0
 
     # Start variables
@@ -134,19 +145,21 @@ def pick_card(bet):
 
     # Compare results
     if event1_value == event2_value:
-        print("There is a tie!")
+        print("There is a tie!\n")
         return 0
     elif event1_value > event2_value:
-        print("Congrats you win!!")
+        print("Congrats you win!!\n")
         return bet
     else:
-        print("Better luck next time. :(")
+        print("Better luck next time. :(\n")
         return -bet
 
 
 # Call your game of chance functions here
 money = 100
-
+print(money)
+print()
+money += flip_coin(20, "heads")
+money += cho_han(20, "even")
 money += pick_card(50)
-
 print(money)
