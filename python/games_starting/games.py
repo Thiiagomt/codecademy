@@ -37,3 +37,36 @@ def flip_coin(bet, result):
             print("Better luck next time. :(")
             return -bet
 
+
+def cho_han(bet, result):
+    # Verify conditions to bet
+    if bet > money:
+        print("You don't have all that money to bet.")
+        return 0
+    if (result.lower() != "odd") and (result.lower() != "even"):
+        print("Invalid input result.")
+        return 0
+
+    print("You picked a result of sum the dices: " + result)
+
+    dice1 = random.randint(1, 6)
+    dice2 = random.randint(1, 6)
+    event = dice1 + dice2
+    print("Sum the dices is: " + str(event))
+
+    if (event % 2) == 0:
+        if result.lower() == "even":
+            print("Congrats!!")
+            return bet
+        else:
+            print("Better luck next time. :(")
+            return -bet
+    else:
+        if result.lower() == "odd":
+            print("Congrats!!")
+            return bet
+        else:
+            print("Better luck next time. :(")
+            return -bet
+
+
