@@ -70,3 +70,83 @@ def cho_han(bet, result):
             return -bet
 
 
+def pick_card(bet):
+    # Verify conditions to bet
+    if bet > money:
+        print("You don't have all that money to bet.")
+        return 0
+
+    # Start variables
+    event1_value = 0
+    event2_value = 0
+
+    deck = [2, 2, 2, 2,
+            3, 3, 3, 3,
+            4, 4, 4, 4,
+            5, 5, 5, 5,
+            6, 6, 6, 6,
+            7, 7, 7, 7,
+            8, 8, 8, 8,
+            9, 9, 9, 9,
+            10, 10, 10, 10,
+            "J", "J", "J", "J",
+            "Q", "Q", "Q", "Q",
+            "K", "K", "K", "K",
+            "A", "A", "A", "A"]
+
+    # Draw first card
+    event1 = random.randint(0, 51)
+    print("Your card is: " + str(deck[event1]))
+    if deck[event1] == "J":
+        event1_value = 11
+    elif deck[event1] == "Q":
+        event1_value = 12
+    elif deck[event1] == "K":
+        event1_value = 13
+    elif deck[event1] == "A":
+        event1_value = 14
+    else:
+        event1_value = deck[event1]
+    # Remove it from the deck
+    deck.pop(event1)
+    # Print card infos
+    print("The value of your card is: " + str(event1_value))
+
+    print()
+
+    # Draw second card
+    event2 = random.randint(0, 50)
+    print("The opponent's card is: " + str(deck[event2]))
+    if deck[event2] == "J":
+        event2_value = 11
+    elif deck[event2] == "Q":
+        event2_value = 12
+    elif deck[event2] == "K":
+        event2_value = 13
+    elif deck[event2] == "A":
+        event2_value = 14
+    else:
+        event2_value = deck[event2]
+    # Remove it from the deck
+    deck.pop(event2)
+    # Print card infos
+    print("The value of his card is: " + str(event2_value))
+
+    # Compare results
+    if event1_value == event2_value:
+        print("There is a tie!")
+        return 0
+    elif event1_value > event2_value:
+        print("Congrats you win!!")
+        return bet
+    else:
+        print("Better luck next time. :(")
+        return -bet
+
+
+# Call your game of chance functions here
+money = 100
+
+money += pick_card(50)
+
+print(money)
