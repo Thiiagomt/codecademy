@@ -1,4 +1,5 @@
 Censor Dispenser
+
 Overview
 
 You’ve recently gotten a job working in the IT department at one of Silicon Valley’s hottest new startups, AirWeb. The company is developing a state-of-the-art artificial intelligence engine designed to help provide a new perspective on the world’s problems. Interestingly, very few people know the details of AirWeb ‘s work and the company is very secretive about its technology, even to its own investors.
@@ -6,6 +7,7 @@ You’ve recently gotten a job working in the IT department at one of Silicon Va
 You report directly to the Head of Product, a person named Mr. Cloudy, and he has a very important task for you. You see, every month, the head researchers down in the lab send an email to the board of investors to tell them about the status of the project. Cloudy wants you to intercept these emails and censor any “proprietary information” included in them.
 
 TODO:
+
 1 - Write a function that can censor a specific word or phrase from a body of text, and then return the text.
 
 2 - Write a function that can censor not just a specific word or phrase from a body of text, but a whole list of words and phrases, and then return the text.
