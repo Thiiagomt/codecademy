@@ -59,3 +59,14 @@ def censor_all(words_list, text):
     text = ' '
     text = text.join(all_words)
     return text
+
+
+# Testing functions
+print("EMAIL ONE: \n##########")
+print(censor_word("learning algorithms", email_one))
+print("\nEMAIL TWO: \n#########")
+print(censor_list(proprietary_terms, email_two))
+print("\nEMAIL THREE: \n#########")
+print(censor_negative_words(negative_words, proprietary_terms, email_three))
+print("\nEMAIL FOUR: \n##########")
+print(censor_all(big_list, email_four))
