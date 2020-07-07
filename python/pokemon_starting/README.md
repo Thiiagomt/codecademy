@@ -1,13 +1,13 @@
-#Become A Pokémon Master
+# Become A Pokémon Master
 
-###Overview
+### Overview
 
 In this project, you will be using Python Classes to create a game system similar to the popular game 
 series Pokémon. If you’re unfamiliar with Pokémon, it is a game where creatures (Pokémon) battle against 
 each other. Every Pokémon has statistics associated with it like health, level, type, and a name. In this 
 project we’ll make several classes that interact with each other so you can create your own Pokémon battles!
 
-###TODO:
+### TODO:
 
 * Create a Pokémon class. The __init__() method of our Pokémon class created variables to keep track of the Pokémon’s name, level, type (for example "Fire" or "Water"), maximum health, current health, and whether or not the Pokémon was knocked out. In our implementation, the maximum health was determined by the Pokémon’s level.
 
