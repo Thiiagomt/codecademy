@@ -1,2 +1,3 @@
-# codecademy
-Cursos e exercícios do codecademy
+# Codecademy
+
+### Projetos dos cursos codecademy
