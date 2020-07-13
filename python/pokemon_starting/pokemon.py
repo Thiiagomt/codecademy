@@ -64,6 +64,7 @@ class Pokemon:
 
 pikachu = Pokemon('Pikachu', 'Electric', 30)
 
+print()
 print(pikachu.current_health)
 print()
 pikachu.lose_health(100)

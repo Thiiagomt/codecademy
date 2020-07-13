@@ -2,6 +2,22 @@ import random
 
 
 # Write your game of chance functions here
+
+
+# Function to atribute points for a card from the deck
+def card_value(deck, index):
+    if deck[index] == "J":
+        return 11
+    elif deck[index] == "Q":
+        return 12
+    elif deck[index] == "K":
+        return 13
+    elif deck[index] == "A":
+        return 14
+    else:
+        return deck[index]
+
+
 def flip_coin(bet, result):
     # Heads = 0
     # Tails = 1
@@ -108,16 +124,7 @@ PICK  CARD
     # Draw first card
     event1 = random.randint(0, 51)
     print("Your card is: " + str(deck[event1]))
-    if deck[event1] == "J":
-        event1_value = 11
-    elif deck[event1] == "Q":
-        event1_value = 12
-    elif deck[event1] == "K":
-        event1_value = 13
-    elif deck[event1] == "A":
-        event1_value = 14
-    else:
-        event1_value = deck[event1]
+    event1_value = card_value(deck, event1)
     # Remove it from the deck
     deck.pop(event1)
     # Print card infos
@@ -128,16 +135,7 @@ PICK  CARD
     # Draw second card
     event2 = random.randint(0, 50)
     print("The opponent's card is: " + str(deck[event2]))
-    if deck[event2] == "J":
-        event2_value = 11
-    elif deck[event2] == "Q":
-        event2_value = 12
-    elif deck[event2] == "K":
-        event2_value = 13
-    elif deck[event2] == "A":
-        event2_value = 14
-    else:
-        event2_value = deck[event2]
+    event2_value = card_value(deck, event2)
     # Remove it from the deck
     deck.pop(event2)
     # Print card infos
