@@ -1,10 +1,10 @@
+# List of pokemon types
+list_types_of_pokemon = ['Normal', 'Fire', 'Water', 'Electric', 'Grass', 'Ice', 'Fighting', 'Poison', 'Ground',
+                         'Flying', 'Psychic', 'Bug', 'Rock', 'Ghost', 'Dragon', 'Dark', 'Steel', 'Fairy']
 
-# List of pokemom types
-list_types_of_pokemom = ['Normal', 'Fire', 'Water', 'Eletric', 'Grass', 'Ice', 'Fighting', 'Poison','Ground',
-                         'Flying','Psychic', 'Bug', 'Rock', 'Ghost', 'Dragon', 'Dark', 'Steel', 'Fairy']
 
-# Pokemom Class
-class Pokemom:
+# Pokemon Class
+class Pokemon:
     def __init__(self, name, type, level):
         self.name = name
         self.level = level
@@ -26,7 +26,8 @@ class Pokemom:
 
             if self.current_health <= 0:
                 self.knock_out()
-                print(self.name + ' was knocked out and your current health is: ' + str(self.current_health) + ' points.')
+                print(
+                    self.name + ' was knocked out and your current health is: ' + str(self.current_health) + ' points.')
             else:
                 if self.current_health == 1:
                     print(self.name + ' current health is: ' + str(self.current_health) + ' point.')
@@ -36,7 +37,6 @@ class Pokemom:
             print(self.name + ' is knocked out. You need to revive him first.')
 
         return self.current_health
-
 
     def gain_health(self, gain_health):
         if not self.is_knocked_out:
@@ -62,8 +62,7 @@ class Pokemom:
         self.current_health = self.max_health
 
 
-
-pikachu = Pokemom('Pikachu', 'Eletric', 30)
+pikachu = Pokemon('Pikachu', 'Electric', 30)
 
 print(pikachu.current_health)
 print()
