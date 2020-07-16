@@ -1,19 +1,22 @@
-import java.util.Arrays;
-
 public class TransitCalculator {
 
     // Days a person will be using the transit system (max 30 days)
     int daysOfUse;
     // Number of individual rides the person expects to take in that time
     int individualRides;
+    // Age of user
+    int userAge;
 
     // Arrays for fare options and there prices
     String[] fareOptions = {"Pay-per-ride", "7-day Unlimited rides", "30-day Unlimited rides"};
-    double[] farePrices = {2.75, 33, 127};
+    double[] normalFarePrices = {2.75, 33, 127};
+    double[] reducedFarePrices = {1.35, 16.5, 63.5};
 
-    public TransitCalculator(int rides, int days){
+    // Constructor
+    public TransitCalculator(int rides, int days, int age){
         daysOfUse = days;
         individualRides = rides;
+        userAge = age;
     }
 
     // Return price/ride on 7-day Unlimited rides fare
@@ -23,9 +26,9 @@ public class TransitCalculator {
         double totalFare;
 
         if (daysOfUse % 7 == 0) {
-            totalFare = weeks * farePrices[1];
+            totalFare = (userAge < 65) ? weeks * normalFarePrices[1] : weeks * reducedFarePrices[1];
         } else {
-            totalFare = (weeks + 1) * farePrices[1];
+            totalFare = (userAge < 65) ? (weeks+1) * normalFarePrices[1] : (weeks+1) * reducedFarePrices[1];
         }
 
         return totalFare / individualRides;
@@ -38,9 +41,9 @@ public class TransitCalculator {
         double totalFare;
 
         if (daysOfUse % 30 == 0) {
-            totalFare = weeks * farePrices[2];
+            totalFare = (userAge < 65) ? weeks * normalFarePrices[2] : weeks * reducedFarePrices[2];
         } else {
-            totalFare = (weeks + 1) * farePrices[2];
+            totalFare = (userAge < 65) ? (weeks+1) * normalFarePrices[2] : (weeks+1) * reducedFarePrices[2];
         }
 
         return totalFare / individualRides;
@@ -51,7 +54,7 @@ public class TransitCalculator {
 
         double[] fares = new double[3];
 
-        double payPerRideFare = farePrices[0];
+        double payPerRideFare = (userAge < 65) ? normalFarePrices[0] : reducedFarePrices[0];
         double unlimited7DaysFare = unlimited7Price();
         double unlimited30DaysFare = unlimited30Price();
 
@@ -81,13 +84,15 @@ public class TransitCalculator {
         return "You should get the " + fareOptions[index] + " option at $" + lowestPrice + " per ride.";
     }
 
+    // Default toString method
     public String toString(){
-        return "Vai da o cu " + daysOfUse + " horas";
+        return "This user is " + userAge + " years old.";
     }
 
     public static void main(String[] args){
+        TransitCalculator youngBoy = new TransitCalculator(54, 26,20);
+        TransitCalculator oldMan = new TransitCalculator(54, 26, 71);
 
-        TransitCalculator object = new TransitCalculator(54, 26);
-        System.out.println(object.getBestFare());
+        System.out.println(oldMan);
     }
 }
