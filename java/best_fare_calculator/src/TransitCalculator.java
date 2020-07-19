@@ -13,40 +13,40 @@ public class TransitCalculator {
     double[] reducedFarePrices = {1.35, 16.5, 63.5};
 
     // Constructor
-    public TransitCalculator(int rides, int days, int age){
-        daysOfUse = days;
-        individualRides = rides;
-        userAge = age;
+    public TransitCalculator(int individualRides, int daysOfUse, int userAge){
+        this.daysOfUse = daysOfUse;
+        this.individualRides = individualRides;
+        this.userAge = userAge;
     }
 
     // Return price/ride on 7-day Unlimited rides fare
     public double unlimited7Price() {
-        int weeks = daysOfUse / 7;
+        int weeks = this.daysOfUse / 7;
 
         double totalFare;
 
-        if (daysOfUse % 7 == 0) {
-            totalFare = (userAge < 65) ? weeks * normalFarePrices[1] : weeks * reducedFarePrices[1];
+        if (this.daysOfUse % 7 == 0) {
+            totalFare = (this.userAge < 65) ? weeks * this.normalFarePrices[1] : weeks * this.reducedFarePrices[1];
         } else {
-            totalFare = (userAge < 65) ? (weeks+1) * normalFarePrices[1] : (weeks+1) * reducedFarePrices[1];
+            totalFare = (this.userAge < 65) ? (weeks+1) * this.normalFarePrices[1] : (weeks+1) * this.reducedFarePrices[1];
         }
 
-        return totalFare / individualRides;
+        return totalFare / this.individualRides;
     }
 
     // Return price/ride on 30-day Unlimited rides fare
     public double unlimited30Price() {
-        int weeks = daysOfUse / 30;
+        int weeks = this.daysOfUse / 30;
 
         double totalFare;
 
-        if (daysOfUse % 30 == 0) {
-            totalFare = (userAge < 65) ? weeks * normalFarePrices[2] : weeks * reducedFarePrices[2];
+        if (this.daysOfUse % 30 == 0) {
+            totalFare = (this.userAge < 65) ? weeks * this.normalFarePrices[2] : weeks * this.reducedFarePrices[2];
         } else {
-            totalFare = (userAge < 65) ? (weeks+1) * normalFarePrices[2] : (weeks+1) * reducedFarePrices[2];
+            totalFare = (this.userAge < 65) ? (weeks+1) * this.normalFarePrices[2] : (weeks+1) * this.reducedFarePrices[2];
         }
 
-        return totalFare / individualRides;
+        return totalFare / this.individualRides;
     }
 
     // Return array of doubles of price/ride for each fare option
@@ -54,7 +54,7 @@ public class TransitCalculator {
 
         double[] fares = new double[3];
 
-        double payPerRideFare = (userAge < 65) ? normalFarePrices[0] : reducedFarePrices[0];
+        double payPerRideFare = (this.userAge < 65) ? this.normalFarePrices[0] : this.reducedFarePrices[0];
         double unlimited7DaysFare = unlimited7Price();
         double unlimited30DaysFare = unlimited30Price();
 
@@ -81,12 +81,12 @@ public class TransitCalculator {
         // Format lowestPrice to print
         lowestPrice = Math.round(lowestPrice * 100.0) / 100.0;
 
-        return "You should get the " + fareOptions[index] + " option at $" + lowestPrice + " per ride.";
+        return "You should get the " + this.fareOptions[index] + " option at $" + lowestPrice + " per ride.";
     }
 
     // Default toString method
     public String toString(){
-        return "This user is " + userAge + " years old.";
+        return "This user is " + this.userAge + " years old.";
     }
 
     public static void main(String[] args){
