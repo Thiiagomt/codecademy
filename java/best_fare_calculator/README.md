@@ -59,11 +59,11 @@ Unlimited option.
         * 7-day Unlimited Rides: $16.50
         * 30-day Unlimited Rides: $63.50 
     
-    - [ ] NYC isn’t the only city where there are several fare options available! Extend your TransitCalculator to work 
+    * NYC isn’t the only city where there are several fare options available! Extend your TransitCalculator to work 
     for a different city. Pick your own, or choose from these below:
-        * [Vancouver](https://www.translink.ca/Fares-and-Passes/Fare-Pricing.aspx)
-        * [Mexico](https://mexicometro.org/about/fares/)
-        * [Delhi](http://www.delhimetrorail.com/recharge_Info.aspx)
-        * [Berlin](https://www.visitberlin.de/en/public-transport-berlin)
-        * [Paris](https://www.ratp.fr/en/titres-et-tarifs)
-        * [Seoul](http://www.seoulmetro.co.kr/en/page.do?menuIdx=348)
+        * [ ] [Vancouver](https://www.translink.ca/Fares-and-Passes/Fare-Pricing.aspx)
+        * [ ] [Mexico](https://mexicometro.org/about/fares/)
+        * [ ] [Delhi](http://www.delhimetrorail.com/recharge_Info.aspx)
+        * [ ] [Berlin](https://www.visitberlin.de/en/public-transport-berlin)
+        * [ ] [Paris](https://www.ratp.fr/en/titres-et-tarifs)
+        * [ ] [Seoul](http://www.seoulmetro.co.kr/en/page.do?menuIdx=348)
