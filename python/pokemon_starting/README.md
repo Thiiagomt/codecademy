@@ -29,7 +29,7 @@ Again, make sure to include print statements with all of these methods so the us
     - A Pokémon that is knocked out should not be able to attack another Pokémon.
     - A trainer should not be able to switch their active Pokémon to one that is knocked out
 
-* Add more functionality that we haven’t implemented yet. Here is a list of ideas that you might want to try:
+* #### Extra tools:
     - [ ] Give Pokémon experience for battling other Pokémon. A Pokémon’s level should increase once it gets enough experience points.
     - [ ] Create specific Classes that inherit from the general Pokémon class. For example, could you create a Charmander class that has all of the functionality of a Pokémon plus some extra features?
     - [ ] Let your Pokémon evolve once they hit a certain level.
