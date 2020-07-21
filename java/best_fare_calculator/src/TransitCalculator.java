@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class TransitCalculator {
 
     // Days a person will be using the transit system (max 30 days)
@@ -58,9 +60,13 @@ public class TransitCalculator {
         double unlimited7DaysFare = unlimited7Price();
         double unlimited30DaysFare = unlimited30Price();
 
-        fares[0] = payPerRideFare;
-        fares[1] = unlimited7DaysFare;
-        fares[2] = unlimited30DaysFare;
+        double[] prices = {payPerRideFare, unlimited7DaysFare, unlimited30DaysFare};
+
+        int i = 0;
+        for(Double fare : prices){
+            fares[i] = fare;
+            i += 1;
+        }
 
         return fares;
     }
@@ -93,6 +99,6 @@ public class TransitCalculator {
         TransitCalculator youngBoy = new TransitCalculator(54, 26,20);
         TransitCalculator oldMan = new TransitCalculator(54, 26, 71);
 
-        System.out.println(oldMan);
+        System.out.println(Arrays.toString(oldMan.getRidePrices()));
     }
 }
