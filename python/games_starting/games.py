@@ -34,14 +34,10 @@ FLIP COIN
         return 0
 
     print("You pick: " + result)
-    event = random.randint(0, 1)
+    event = random.randint(0, 1)     
 
     if event == 0:
         print("Turned: Heads!")
-    else:
-        print("Turned: Tails!")
-
-    if event == 0:
         if result.lower() == "heads":
             print("Congrats you win!!\n")
             return bet
@@ -49,6 +45,7 @@ FLIP COIN
             print("Better luck next time. :(\n")
             return -bet
     else:
+        print("Turned: Tails!")
         if result.lower() == "tails":
             print("Congrats you win!!\n")
             return bet
